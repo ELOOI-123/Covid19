@@ -1,0 +1,83 @@
+body *{
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+body {
+  background-color: rgb(185, 201, 223);
+}
+
+.page {
+  width: 1000px;
+  background-color: rgba(187, 231, 241, 0.788);
+  margin: auto;
+  padding: 50px;
+  padding-top: 35px;
+}
+
+.vis-container {
+  width: 100%;
+}
+
+.description h2,
+h1 {
+  margin-top: 0px;
+}
+
+.description-right {
+  padding-left: 20px;
+}
+
+.description-left {
+  padding-right: 20px;
+}
+
+.pure-g {
+  margin-bottom: 40px;
+}
+
+.small-font {
+  font-size: 14px;
+}
+
+/* Use red for highlighting critical information (e.g., total cases) */
+.highlight-red {
+  color: #FF5733;
+}
+
+/* Use green for highlighting positive information (e.g., recoveries) */
+.highlight-green {
+  color: #4CAF50;
+}
+
+/* Apply blue color gradient for choropleth maps */
+.choropleth-map {
+  fill: #0A4C7F; /* Dark blue for low values */
+}
+
+/* Use contrasting colors for bubble plot (cases and deaths) */
+.bubble-cases {
+  background-color: #007BFF; /* Blue for cases */
+  color: #fff;
+}
+
+.bubble-deaths {
+  background-color: #FF6C5A; /* Red for deaths */
+  color: #fff;
+}
+
+/* Set interactive and highlight colors for buttons or tooltips */
+.interactive-button {
+  background-color: #148F77; /* Dark green */
+  color: #fff;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+/* On hover, slightly lighten the interactive button color */
+.interactive-button:hover {
+  background-color: #19A688; /* Light green */
+}

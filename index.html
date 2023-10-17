@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Covid 19 Explorer </title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>COVID 19 Data Explorer </h1>
+        <p>This page demonstrates the updated data on COVID 19 around the world .</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <div class="description description-top">
+          <h2>COVID-19 Cases Worldwide</h2>
+          <p>In this data visualization, we present the global impact of the COVID-19 pandemic as of April 10, 2023, 
+            using data sourced from 'Our World in Data.' 
+            The first visualization is a choropleth map that provides a visual representation of the total number of COVID-19 cases that have occurred worldwide. 
+            Each country or region is color-coded to reflect the severity of the pandemic, with darker shades indicating higher case counts. 
+            This map offers a comprehensive view of the spread and distribution of COVID-19 cases across the globe.</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="pure-g">
+        <div class = "pure-u-1">
+          <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <div class="description description-top">
+          <h2>Total COVID-19 Cases and Deaths</h2>
+          <p>This visualization takes a closer look at the relationship between total COVID-19 cases and total deaths. 
+            Using a bubble plot, we plot each country or region on a graph, with the total cases on the x-axis and total deaths on the y-axis. 
+            Each data point represents a specific location, and the size of the bubble corresponds to the magnitude of the outbreak. 
+            By visually aligning total cases and deaths, this visualization allows us to examine the impact of the pandemic in different regions, highlighting areas with higher case fatality rates.</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="pure-g">
+        <div class = "pure-u-1">
+          <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-right">
+          <h2>Growth of COVID-19 Cases Over the Years</h2>
+          <p>For a broader perspective, this line chart presents a time-series analysis of COVID-19 cases worldwide. 
+            This chart shows the evolution of the pandemic by displaying the total number of cases reported annually, spanning multiple years. 
+            By examining trends and patterns over time, we gain insights into the progression of the pandemic on a global scale. 
+            This visualization aids in understanding the ebb and flow of the pandemic, as well as any long-term impacts on public health and healthcare systems</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by Eng Lim Ooi </p>
+        <p>Data collected from https://ourworldindata.org/explorers/coronavirus-data-explorer </p>
+      </div> 
+    </div>
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./scatter_plot_interactive.vg.json";
+    var specVis2 = "./line-chart-responsive.json";
+    var specVis3 = "./choropleth_map.vg.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>
